@@ -6,21 +6,15 @@
 //  Copyright © 2016 Craig. All rights reserved.
 //
 
-import UIKit
-
-class AddEvent: UIViewController {
+    import UIKit
+    class AddEvent: UIViewController {
     
     var thedate : String?
     
-    
     @IBOutlet weak var dateTextField: UITextField!
-    
-
+        
     @IBAction func textFieldEditing(sender: UITextField) {
-    
-
-   
-        let datePickerView:UIDatePicker = UIDatePicker()
+    let datePickerView:UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickerView
        datePickerView.addTarget(self, action: #selector(AddEvent.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
@@ -30,31 +24,19 @@ class AddEvent: UIViewController {
        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
       dateTextField.text = dateFormatter.stringFromDate(sender.date)
-    
-    
     thedate = dateTextField.text!
-
-   
-    }
-    
-    
-    
-    
-   
+        }
     @IBOutlet weak var txtEvent: UITextField!
-    
     @IBAction func btnAddAction(sender: AnyObject) {
     
     var newvalue : String? = ""
-        
     userData = true
     
     newvalue! += thedate!
     newvalue! += " "
     newvalue! += txtEvent.text!
-    newvalue! += " .. ... "
+    newvalue! += " ..... "
     newvalue! += "[Wheel Bearings = \(switch1)] "
-    //newvalue! += " "
     newvalue! += " [Water Leaks = \(switch2)] "
     newvalue! += " "
     newvalue! += "[Water Pump = \(switch3)] "
